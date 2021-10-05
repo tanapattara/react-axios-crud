@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import StudentDataService from "../services/StudentService";
 import { useHistory } from "react-router-dom";
 
-const Todo = (props) => {
+const Student = (props) => {
   const history = useHistory();
   const initialStudent = {
     id: null,
@@ -32,7 +32,7 @@ const Todo = (props) => {
     setCurrentStudent({ ...currentStudent, [name]: value });
   };
 
-  const updateTodo = () => {
+  const updateStudent = () => {
     StudentDataService.update(currentStudent.id, currentStudent)
       .then((response) => {
         console.log(response.data);
@@ -92,7 +92,7 @@ const Todo = (props) => {
           <button
             type="submit"
             className="badge bg-success"
-            onClick={updateTodo}
+            onClick={updateStudent}
           >
             Update
           </button>
@@ -108,4 +108,4 @@ const Todo = (props) => {
   );
 };
 
-export default Todo;
+export default Student;

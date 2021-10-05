@@ -33,7 +33,7 @@ const StudentList = () => {
     setCurrentStudent(null);
     setCurrentIndex(-1);
   };
-  const setActiveTodo = (todo, index) => {
+  const setActiveStudent = (todo, index) => {
     setCurrentStudent(todo);
     setCurrentIndex(index);
   };
@@ -91,7 +91,7 @@ const StudentList = () => {
                 className={
                   "list-group-item " + (index === currentIndex ? "active" : "")
                 }
-                onClick={() => setActiveTodo(student, index)}
+                onClick={() => setActiveStudent(student, index)}
                 key={index}
               >
                 {student.name}
